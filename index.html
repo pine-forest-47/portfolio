@@ -393,10 +393,12 @@
                 gap: 14px !important;
             }
 
+            /* 모바일 쇼츠 카드 배경 더 어둡게 처리 (#08080a) */
             .shorts-grid .work-card {
                 flex-direction: row !important;
                 align-items: stretch !important;
                 height: 115px !important;
+                background: #08080a !important; 
             }
 
             .shorts-grid .media-container.shorts {
@@ -404,11 +406,12 @@
                 height: 100% !important;
                 aspect-ratio: auto !important;
                 flex-shrink: 0 !important;
+                background: #000000 !important;
             }
 
             /* 모바일 쇼츠 카드 내 텍스트 패딩 및 정렬 조절 */
             .shorts-grid .card-content {
-                padding: 10px 14px 10px 14px !important; /* 상단 패딩 살짝 확대 */
+                padding: 12px 14px 10px 14px !important; 
                 display: flex !important;
                 flex-direction: column !important;
                 justify-content: flex-start !important;
@@ -416,11 +419,11 @@
                 box-sizing: border-box !important;
             }
 
-            /* 모바일 쇼츠 카드 제목 상단 여백 추가로 위치 내림 */
+            /* 제목 위치 대폭 하향 (margin-top: 10px) */
             .shorts-grid .card-title {
                 font-size: 0.88rem !important;
                 line-height: 1.35 !important;
-                margin-top: 4px !important; /* 바짝 붙지 않도록 내려줌 */
+                margin-top: 10px !important; 
                 margin-bottom: 6px !important;
                 display: -webkit-box !important;
                 -webkit-line-clamp: 2 !important;
@@ -436,6 +439,7 @@
             .shorts-grid .tag {
                 font-size: 0.65rem !important;
                 padding: 2px 6px !important;
+                background: #121216 !important;
             }
 
             .card-hover-overlay {
