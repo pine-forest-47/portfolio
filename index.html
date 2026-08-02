@@ -393,46 +393,47 @@
                 gap: 14px !important;
             }
 
-            /* 모바일 쇼츠 카드 배경 더 어두운 딥 블랙(#060608) 적용 */
+            /* 모바일 쇼츠 카드: 고정 높이를 해제하고 텍스트에 따라 유연하게 늘어나도록 설정 */
             .shorts-grid .work-card {
                 flex-direction: row !important;
                 align-items: stretch !important;
-                height: 115px !important;
+                height: auto !important;
+                min-height: 115px !important;
                 background: #060608 !important; 
             }
 
             .shorts-grid .media-container.shorts {
                 width: 90px !important;
-                height: 100% !important;
+                height: auto !important;
+                align-self: stretch !important;
                 aspect-ratio: auto !important;
                 flex-shrink: 0 !important;
                 background: #000000 !important;
             }
 
-            /* 텍스트 박스: 중앙 정렬(justify-content: center)로 변경하여 제목 위치 하향 */
             .shorts-grid .card-content {
-                padding: 12px 16px !important; 
+                padding: 14px 16px !important; 
                 display: flex !important;
                 flex-direction: column !important;
-                justify-content: center !important; /* 상단 밀착 해제 -> 중앙으로 내려서 배치 */
+                justify-content: center !important;
                 height: 100% !important;
                 box-sizing: border-box !important;
+                flex-grow: 1 !important;
             }
 
-            /* 제목 위치 및 간격 조절 */
+            /* 제목 글자 잘림 해제 및 자연스러운 줄바꿈 */
             .shorts-grid .card-title {
                 font-size: 0.88rem !important;
                 line-height: 1.4 !important;
                 margin-top: 0 !important;
                 margin-bottom: 8px !important;
-                display: -webkit-box !important;
-                -webkit-line-clamp: 2 !important;
-                -webkit-box-orient: vertical !important;
-                overflow: hidden !important;
+                display: block !important;
+                -webkit-line-clamp: unset !important;
+                overflow: visible !important;
             }
 
             .shorts-grid .tags {
-                margin-top: 0 !important;
+                margin-top: 4px !important;
                 gap: 4px !important;
             }
 
