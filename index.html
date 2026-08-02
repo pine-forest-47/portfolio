@@ -350,7 +350,7 @@
             .shorts-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
-        /* 모바일 화면 종합 반응형 스타일 (모든 카드 가로형 변환 & 태그 하단 밀착) */
+        /* 모바일 화면 종합 반응형 스타일 (하단 밀착 정렬 강화) */
         @media (max-width: 640px) {
             header {
                 padding: 14px 5%;
@@ -381,54 +381,61 @@
                 margin-bottom: 14px;
             }
 
-            /* 모바일에서 모든 그리드는 1열 리스트 형태 */
+            /* 모바일 1열 배치 */
             .work-grid,
             .shorts-grid {
                 grid-template-columns: 1fr !important;
                 gap: 14px !important;
             }
 
-            /* 모바일에서 모든 카드를 [좌측: 썸네일 / 우측: 제목 + 태그] 가로형으로 고정 */
+            /* 모바일 가로형 카드 */
             .work-grid .work-card,
             .shorts-grid .work-card {
                 flex-direction: row !important;
-                align-items: stretch !important; /* 높이를 꽉 차게 맞춰 하단 정렬 지원 */
+                align-items: stretch !important;
                 height: auto !important;
             }
 
-            /* 16:9 일반 영상 모바일 썸네일 크기 */
+            /* 16:9 썸네일 고정 크기 */
             .work-grid .media-container {
-                width: 130px !important;
-                aspect-ratio: 16 / 9 !important;
+                width: 125px !important;
+                height: 80px !important; /* 높이 고정으로 오차 방지 */
+                aspect-ratio: auto !important;
                 flex-shrink: 0 !important;
             }
 
-            /* 9:16 쇼츠 영상 모바일 썸네일 크기 */
+            /* 9:16 쇼츠 썸네일 고정 크기 */
             .shorts-grid .media-container.shorts {
-                width: 95px !important;
-                aspect-ratio: 9 / 16 !important;
+                width: 85px !important;
+                height: 130px !important; /* 높이 고정으로 오차 방지 */
+                aspect-ratio: auto !important;
                 flex-shrink: 0 !important;
             }
 
+            /* 오른쪽 내용 박스: 하단 밀착 배치 */
             .work-card .card-content {
-                padding: 12px 14px !important;
+                padding: 10px 14px !important;
                 display: flex !important;
                 flex-direction: column !important;
-                justify-content: space-between !important; /* 제목은 위쪽, 태그는 맨 아래쪽으로 밀착 */
-                flex-grow: 1 !important;
+                justify-content: space-between !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
             }
 
             .work-card .card-title {
                 font-size: 0.88rem !important;
-                margin-bottom: 8px !important;
+                line-height: 1.35 !important;
+                margin-bottom: 6px !important;
             }
 
+            /* 태그(키워드) 그룹 바닥 밀착 */
             .work-card .tags {
-                margin-top: auto !important; /* 키워드를 바닥 쪽으로 딱 붙임 */
+                margin-top: auto !important;
+                padding-top: 4px !important;
             }
 
             .card-hover-overlay {
-                display: none !important; /* 모바일 터치 환경에 맞춰 오버레이 비활성화 */
+                display: none !important;
             }
         }
 
