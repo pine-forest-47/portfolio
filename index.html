@@ -100,7 +100,6 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            opacity: 0.6; /* 글씨 가독성을 높이기 위해 배경 투명도 미세 조절 */
         }
 
         .hero-overlay {
@@ -500,10 +499,10 @@
         </nav>
     </header>
 
-    <!-- Hero Section (고화질 웹 루프 영상 연결) -->
+    <!-- Hero Section (로컬 비디오 파일 사용) -->
     <section class="hero">
-        <video class="hero-video-bg" autoplay loop muted playsinline>
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-fast-lines-in-a-dark-background-30013-large.mp4" type="video/mp4">
+        <video class="hero-video-bg" autoplay loop muted playsinline onerror="this.style.display='none'">
+            <source src="background-video.mp4" type="video/mp4">
         </video>
         
         <div class="hero-overlay"></div>
