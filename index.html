@@ -350,7 +350,7 @@
             .shorts-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
-        /* 모바일 화면 종합 반응형 스타일 */
+        /* 모바일 화면 종합 반응형 스타일 (쇼츠만 가로형 구조 전환) */
         @media (max-width: 640px) {
             header {
                 padding: 14px 5%;
@@ -381,13 +381,13 @@
                 margin-bottom: 14px;
             }
 
-            /* 일반 가로영상(work-grid) 모바일 1열 세로형 카드 유지 */
+            /* 일반 16:9 가로영상(work-grid) 모바일 1열 세로 카드 유지 */
             .work-grid {
                 grid-template-columns: 1fr !important;
                 gap: 20px !important;
             }
 
-            /* 세로폼 쇼츠(shorts-grid) 모바일 전용 1열 가로 카드 변환 */
+            /* 세로형 쇼츠(shorts-grid)만 모바일 전용 1열 가로형 레이아웃 변환 */
             .shorts-grid {
                 grid-template-columns: 1fr !important;
                 gap: 14px !important;
