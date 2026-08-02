@@ -393,7 +393,7 @@
                 gap: 14px !important;
             }
 
-            /* 모바일 쇼츠 카드: 고정 높이를 해제하고 텍스트에 따라 유연하게 늘어나도록 설정 */
+            /* 모바일 쇼츠 카드: 고정 높이 해제, 더 어두운 배경(#060608) 지정 */
             .shorts-grid .work-card {
                 flex-direction: row !important;
                 align-items: stretch !important;
@@ -411,17 +411,18 @@
                 background: #000000 !important;
             }
 
+            /* 수직 중앙 정렬로 제목 위치를 아래로 자연스럽게 내림 */
             .shorts-grid .card-content {
                 padding: 14px 16px !important; 
                 display: flex !important;
                 flex-direction: column !important;
                 justify-content: center !important;
-                height: 100% !important;
-                box-sizing: border-box !important;
+                height: auto !important;
                 flex-grow: 1 !important;
+                box-sizing: border-box !important;
             }
 
-            /* 제목 글자 잘림 해제 및 자연스러운 줄바꿈 */
+            /* 말줄임 효과 완전 초기화 -> 2줄 이상이어도 안 잘리고 전체 표시 */
             .shorts-grid .card-title {
                 font-size: 0.88rem !important;
                 line-height: 1.4 !important;
@@ -429,7 +430,9 @@
                 margin-bottom: 8px !important;
                 display: block !important;
                 -webkit-line-clamp: unset !important;
+                -webkit-box-orient: unset !important;
                 overflow: visible !important;
+                white-space: normal !important;
             }
 
             .shorts-grid .tags {
