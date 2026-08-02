@@ -21,7 +21,7 @@
             box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Roboto, Arial, sans-serif;
             -webkit-font-smoothing: antialiased;
-            word-break: keep-all; /* 단어 단위 자연스러운 줄바꿈 */
+            word-break: keep-all;
             word-wrap: break-word;
         }
 
@@ -42,6 +42,7 @@
             align-items: center;
             background: rgba(11, 11, 13, 0.85);
             backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             z-index: 1000;
             border-bottom: 1px solid var(--border-color);
         }
@@ -139,9 +140,9 @@
             margin-bottom: 24px;
             border: 1px solid rgba(0, 230, 153, 0.25);
             backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
-        /* 메인 타이틀 반응형 글자 크기 조정 */
         .hero h1 {
             font-size: clamp(1.7rem, 5vw, 3.4rem);
             font-weight: 800;
@@ -283,6 +284,7 @@
             height: calc(100% + 2px);
             background: rgba(14, 14, 17, 0.94);
             backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             padding: 24px;
             display: flex;
             flex-direction: column;
@@ -381,13 +383,11 @@
                 margin-bottom: 14px;
             }
 
-            /* 일반 16:9 가로영상(work-grid) 모바일 1열 세로 카드 유지 */
             .work-grid {
                 grid-template-columns: 1fr !important;
                 gap: 20px !important;
             }
 
-            /* 세로형 쇼츠(shorts-grid) 모바일 1열 가로 카드 변환 */
             .shorts-grid {
                 grid-template-columns: 1fr !important;
                 gap: 14px !important;
@@ -406,9 +406,9 @@
                 flex-shrink: 0 !important;
             }
 
-            /* 제목 위치를 바짝 올린 수직 상단 밀착 정렬 */
+            /* 모바일 쇼츠 카드 내 텍스트 패딩 및 정렬 조절 */
             .shorts-grid .card-content {
-                padding: 8px 14px 10px 14px !important;
+                padding: 10px 14px 10px 14px !important; /* 상단 패딩 살짝 확대 */
                 display: flex !important;
                 flex-direction: column !important;
                 justify-content: flex-start !important;
@@ -416,10 +416,11 @@
                 box-sizing: border-box !important;
             }
 
+            /* 모바일 쇼츠 카드 제목 상단 여백 추가로 위치 내림 */
             .shorts-grid .card-title {
                 font-size: 0.88rem !important;
                 line-height: 1.35 !important;
-                margin-top: 0 !important;
+                margin-top: 4px !important; /* 바짝 붙지 않도록 내려줌 */
                 margin-bottom: 6px !important;
                 display: -webkit-box !important;
                 -webkit-line-clamp: 2 !important;
@@ -489,6 +490,7 @@
             height: 100vh;
             background: rgba(0, 0, 0, 0.88);
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -566,6 +568,7 @@
             font-size: 1.05rem;
             margin-bottom: 22px;
             letter-spacing: 0.5px;
+            user-select: all;
         }
 
         .modal-card-close {
@@ -613,9 +616,7 @@
     </section>
 
 
-    <!-- ========================================================
-         CATEGORY: 3D Art
-    ======================================================== -->
+    <!-- CATEGORY: 3D Art -->
     <div class="category-header" id="3d-main">
         <h2 class="category-title">3D Art</h2>
     </div>
@@ -630,7 +631,7 @@
             기아(KIA) 브랜드 협업 프로젝트로, 아이템 선정 및 시나리오 기획부터 참여했습니다. Blender를 활용하여 3D 배경 제작, 텍스처링(Texturing), 카메라 애니메이팅 및 렌더링 작업을 수행하며 핵심 메시지를 직관적으로 전달하는 모션을 연출했습니다.
         </p>
         <div class="work-grid">
-            <a href="https://www.youtube.com/watch?v=ObD50VgIp7o" target="_blank" class="work-card">
+            <a href="https://www.youtube.com/watch?v=ObD50VgIp7o" target="_blank" rel="noopener noreferrer" class="work-card">
                 <div class="media-container">
                     <img src="https://img.youtube.com/vi/ObD50VgIp7o/hqdefault.jpg" alt="화물칸 활용하기 | The Kia PV5">
                     <div class="card-hover-overlay">
@@ -649,7 +650,7 @@
                 </div>
             </a>
 
-            <a href="https://www.youtube.com/watch?v=G1ShvwjM4V4" target="_blank" class="work-card">
+            <a href="https://www.youtube.com/watch?v=G1ShvwjM4V4" target="_blank" rel="noopener noreferrer" class="work-card">
                 <div class="media-container">
                     <img src="https://img.youtube.com/vi/G1ShvwjM4V4/hqdefault.jpg" alt="오프로드 주행 성능 및 유의사항 | The Kia Tasman">
                     <div class="card-hover-overlay">
@@ -668,7 +669,7 @@
                 </div>
             </a>
 
-            <a href="https://www.youtube.com/watch?v=hc3GUWHzevA" target="_blank" class="work-card">
+            <a href="https://www.youtube.com/watch?v=hc3GUWHzevA" target="_blank" rel="noopener noreferrer" class="work-card">
                 <div class="media-container">
                     <img src="https://img.youtube.com/vi/hc3GUWHzevA/hqdefault.jpg" alt="차 안에서 게임하기, 같이 즐겨 볼까요? | The Kia EV3">
                     <div class="card-hover-overlay">
@@ -695,7 +696,7 @@
             <h3 class="sub-title">3D Works</h3>
         </div>
         <div class="work-grid">
-            <a href="https://www.youtube.com/watch?v=Wbl1hqoTtvo" target="_blank" class="work-card">
+            <a href="https://www.youtube.com/watch?v=Wbl1hqoTtvo" target="_blank" rel="noopener noreferrer" class="work-card">
                 <div class="media-container">
                     <img src="https://img.youtube.com/vi/Wbl1hqoTtvo/hqdefault.jpg" alt="3D Portfolio Showreel">
                     <div class="card-hover-overlay">
@@ -755,9 +756,7 @@
     </section>
 
 
-    <!-- ========================================================
-         CATEGORY: Video Edit
-    ======================================================== -->
+    <!-- CATEGORY: Video Edit -->
     <div class="category-header" id="video-main">
         <h2 class="category-title">Video Edit</h2>
     </div>
@@ -772,7 +771,7 @@
             개인 브랜딩 유튜브 채널 '파인의 숲' 프로젝트입니다. 게임 플레이 영상, 퀴즈 및 일상 VLOG 등 다양한 카테고리의 콘텐츠를 기획했으며, 촬영 및 컷 편집, 흐름에 맞춘 효과음/자막 연출을 적용했습니다.
         </p>
         <div class="work-grid">
-            <a href="https://www.youtube.com/watch?v=FNaKxB6jHJ4" target="_blank" class="work-card">
+            <a href="https://www.youtube.com/watch?v=FNaKxB6jHJ4" target="_blank" rel="noopener noreferrer" class="work-card">
                 <div class="media-container">
                     <img src="https://img.youtube.com/vi/FNaKxB6jHJ4/hqdefault.jpg" alt="고양이 집사가 해보는 고양이가 세상을 구하는 게임 STRAY">
                     <div class="card-hover-overlay">
@@ -789,7 +788,7 @@
                 </div>
             </a>
 
-            <a href="https://www.youtube.com/watch?v=7tQYsTLM7qs" target="_blank" class="work-card">
+            <a href="https://www.youtube.com/watch?v=7tQYsTLM7qs" target="_blank" rel="noopener noreferrer" class="work-card">
                 <div class="media-container">
                     <img src="https://img.youtube.com/vi/7tQYsTLM7qs/hqdefault.jpg" alt="하꼬 유튜버의 롤 템트리 보고 챔피언 맞추기">
                     <div class="card-hover-overlay">
@@ -806,7 +805,7 @@
                 </div>
             </a>
 
-            <a href="https://www.youtube.com/watch?v=IQgJcnzNJgs" target="_blank" class="work-card">
+            <a href="https://www.youtube.com/watch?v=IQgJcnzNJgs" target="_blank" rel="noopener noreferrer" class="work-card">
                 <div class="media-container">
                     <img src="https://img.youtube.com/vi/IQgJcnzNJgs/hqdefault.jpg" alt="베일 것 같은 상남자의 하루 | 파인극장">
                     <div class="card-hover-overlay">
@@ -835,7 +834,7 @@
             반려묘 레오와 탄이를 모시는 흙수저 집사의 유쾌한 고양이 콘텐츠 프로젝트입니다. 시청 유지율과 직관적 몰입감이 높은 유튜브 쇼츠(Shorts) 포맷을 적극 활용하여 기획 및 속도감 있는 편집을 진행하고 있습니다.
         </p>
         <div class="shorts-grid">
-            <a href="https://www.youtube.com/shorts/duV4cZH3bGY" target="_blank" class="work-card">
+            <a href="https://www.youtube.com/shorts/duV4cZH3bGY" target="_blank" rel="noopener noreferrer" class="work-card">
                 <div class="media-container shorts">
                     <img src="https://img.youtube.com/vi/duV4cZH3bGY/hqdefault.jpg" alt="레오 얼굴에 상처가!?">
                     <div class="card-hover-overlay">
@@ -851,7 +850,7 @@
                 </div>
             </a>
 
-            <a href="https://www.youtube.com/shorts/LdvOldM-LX0" target="_blank" class="work-card">
+            <a href="https://www.youtube.com/shorts/LdvOldM-LX0" target="_blank" rel="noopener noreferrer" class="work-card">
                 <div class="media-container shorts">
                     <img src="https://img.youtube.com/vi/LdvOldM-LX0/hqdefault.jpg" alt="고양이 얼굴에 하품 버튼이 있다?!">
                     <div class="card-hover-overlay">
@@ -867,7 +866,7 @@
                 </div>
             </a>
 
-            <a href="https://www.youtube.com/shorts/mt1YB_nhS_g" target="_blank" class="work-card">
+            <a href="https://www.youtube.com/shorts/mt1YB_nhS_g" target="_blank" rel="noopener noreferrer" class="work-card">
                 <div class="media-container shorts">
                     <img src="https://img.youtube.com/vi/mt1YB_nhS_g/hqdefault.jpg" alt="고양이 호흡이 너무 가빠르다면?">
                     <div class="card-hover-overlay">
@@ -883,7 +882,7 @@
                 </div>
             </a>
 
-            <a href="https://www.youtube.com/shorts/IOtKS7-DqvE" target="_blank" class="work-card">
+            <a href="https://www.youtube.com/shorts/IOtKS7-DqvE" target="_blank" rel="noopener noreferrer" class="work-card">
                 <div class="media-container shorts">
                     <img src="https://img.youtube.com/vi/IOtKS7-DqvE/hqdefault.jpg" alt="고양이 키우는거 반대하는 아버지">
                     <div class="card-hover-overlay">
@@ -911,7 +910,7 @@
             AI 툴을 활용해 직장인의 공감을 유발하는 오피스 콘텐츠를 제작했습니다. 기획부터 프롬프트 작성, 이미지 수정, AI 영상 생성을 거쳐 AI 음성 더빙까지 종합적인 AI 콘텐츠 파이프라인을 전담했습니다.
         </p>
         <div class="shorts-grid">
-            <a href="https://www.youtube.com/shorts/5Sn87nVVXB8" target="_blank" class="work-card">
+            <a href="https://www.youtube.com/shorts/5Sn87nVVXB8" target="_blank" rel="noopener noreferrer" class="work-card">
                 <div class="media-container shorts">
                     <img src="https://img.youtube.com/vi/5Sn87nVVXB8/hqdefault.jpg" alt="이브 날에 퇴근 못하고 크리스마스 트리 만들기">
                     <div class="card-hover-overlay">
@@ -929,7 +928,7 @@
                 </div>
             </a>
 
-            <a href="https://www.youtube.com/shorts/4BM2AyxYCBQ" target="_blank" class="work-card">
+            <a href="https://www.youtube.com/shorts/4BM2AyxYCBQ" target="_blank" rel="noopener noreferrer" class="work-card">
                 <div class="media-container shorts">
                     <img src="https://img.youtube.com/vi/4BM2AyxYCBQ/hqdefault.jpg" alt="연휴 보내고 온 직장인들">
                     <div class="card-hover-overlay">
@@ -947,7 +946,7 @@
                 </div>
             </a>
 
-            <a href="https://www.youtube.com/shorts/XTozLTmVScs" target="_blank" class="work-card">
+            <a href="https://www.youtube.com/shorts/XTozLTmVScs" target="_blank" rel="noopener noreferrer" class="work-card">
                 <div class="media-container shorts">
                     <img src="https://img.youtube.com/vi/XTozLTmVScs/hqdefault.jpg" alt="회사에서 거슬리는 소리">
                     <div class="card-hover-overlay">
@@ -965,7 +964,7 @@
                 </div>
             </a>
 
-            <a href="https://www.youtube.com/shorts/DMRPhxNQWsk" target="_blank" class="work-card">
+            <a href="https://www.youtube.com/shorts/DMRPhxNQWsk" target="_blank" rel="noopener noreferrer" class="work-card">
                 <div class="media-container shorts">
                     <img src="https://img.youtube.com/vi/DMRPhxNQWsk/hqdefault.jpg" alt="사무실에서 누가 아직도 에어컨 키냐">
                     <div class="card-hover-overlay">
@@ -991,8 +990,7 @@
         <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px;">Let's Work Together</h2>
         <p style="color: var(--text-sub);">3D 그래픽, 영상 편집, 외주 문의는 아래 버튼을 클릭해 주세요.</p>
 
-        <!-- 버튼 클릭 시 이메일 팝업 실행 -->
-        <a onclick="showEmailModal()" class="contact-btn">Get In Touch</a>
+        <a href="javascript:void(0)" onclick="showEmailModal()" class="contact-btn">Get In Touch</a>
     </section>
 
     <footer>
@@ -1002,7 +1000,7 @@
     <!-- 비디오 모달 팝업 구조 -->
     <div class="video-modal" id="videoModal" onclick="closeVideoModal()">
         <div class="modal-container" onclick="event.stopPropagation()">
-            <span class="close-btn" onclick="closeVideoModal()">✕</span>
+            <span class="close-btn" onclick="closeVideoModal()" aria-label="닫기">✕</span>
             <video id="modalPlayer" controls autoplay>
                 <source id="modalSource" src="" type="video/mp4">
             </video>
@@ -1012,21 +1010,30 @@
     <!-- 이메일 안내 팝업 구조 -->
     <div class="video-modal" id="emailModal" onclick="closeEmailModal()">
         <div class="email-modal-card" onclick="event.stopPropagation()">
-            <span class="modal-card-close" onclick="closeEmailModal()">✕</span>
+            <span class="modal-card-close" onclick="closeEmailModal()" aria-label="닫기">✕</span>
             <p>이메일 주소가 클립보드에 복사되었습니다.<br>아래 주소로 문의를 남겨주세요!</p>
             <div class="email-box" id="displayEmail">cocy0826@naver.com</div>
-            <a id="mailToLink" href="#" target="_blank" class="contact-btn" style="display: block; margin-top: 0; padding: 12px;">메일 보내기</a>
+            <a id="mailToLink" href="#" target="_blank" rel="noopener noreferrer" class="contact-btn" style="display: block; margin-top: 0; padding: 12px;">메일 보내기</a>
         </div>
     </div>
 
     <script>
-        /* 이메일 설정 */
         const myEmail = "cocy0826@naver.com"; 
 
+        /* 이메일 모달 및 클립보드 복사 */
         function showEmailModal() {
-            navigator.clipboard.writeText(myEmail);
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(myEmail).catch(() => {});
+            } else {
+                const textArea = document.createElement("textarea");
+                textArea.value = myEmail;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try { document.execCommand('copy'); } catch (err) {}
+                document.body.removeChild(textArea);
+            }
+
             document.getElementById('displayEmail').innerText = myEmail;
-            
             const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${myEmail}&su=[포트폴리오 문의]`;
             document.getElementById('mailToLink').href = gmailUrl;
 
@@ -1037,7 +1044,7 @@
             document.getElementById('emailModal').classList.remove('active');
         }
 
-        /* 비디오 팝업 스크립트 */
+        /* 비디오 모달 함수 */
         function openVideoModal(videoSrc) {
             const modal = document.getElementById('videoModal');
             const player = document.getElementById('modalPlayer');
@@ -1055,6 +1062,14 @@
             player.pause();
             modal.classList.remove('active');
         }
+
+        /* ESC 키로 모달 닫기 이벤트 핸들러 */
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideoModal();
+                closeEmailModal();
+            }
+        });
     </script>
 
 </body>
