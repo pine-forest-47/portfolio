@@ -141,7 +141,7 @@
             backdrop-filter: blur(8px);
         }
 
-        /* 메인 타이틀 반응형 글자 크기 조정 (모바일 확대 적용) */
+        /* 메인 타이틀 반응형 글자 크기 조정 */
         .hero h1 {
             font-size: clamp(1.7rem, 5vw, 3.4rem);
             font-weight: 800;
@@ -344,13 +344,18 @@
             background: var(--accent-glow);
         }
 
+        /* 쇼츠 배지 (모바일 미니 스타일용 기본 숨김) */
+        .shorts-mini-badge {
+            display: none;
+        }
+
         /* 태블릿 화면 반응형 */
         @media (max-width: 1024px) {
             .work-grid { grid-template-columns: repeat(2, 1fr); }
             .shorts-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
-        /* 모바일 화면 종합 반응형 스타일 */
+        /* 모바일 화면 종합 반응형 스타일 (쇼츠 카드 레이아웃 및 밸런스 개선) */
         @media (max-width: 640px) {
             header {
                 padding: 14px 5%;
@@ -387,7 +392,7 @@
                 gap: 20px !important;
             }
 
-            /* 세로형 쇼츠(shorts-grid)만 모바일 전용 1열 가로형 레이아웃 변환 */
+            /* 세로형 쇼츠(shorts-grid) 모바일 1열 가로 카드 변환 */
             .shorts-grid {
                 grid-template-columns: 1fr !important;
                 gap: 14px !important;
@@ -395,34 +400,56 @@
 
             .shorts-grid .work-card {
                 flex-direction: row !important;
-                align-items: stretch !important;
-                height: auto !important;
+                align-items: center !important;
+                height: 120px !important; /* 고정 높이 지정으로 상하 정렬 완전 통제 */
             }
 
             .shorts-grid .media-container.shorts {
-                width: 95px !important;
-                height: 130px !important;
+                width: 85px !important;
+                height: 100% !important;
                 aspect-ratio: auto !important;
                 flex-shrink: 0 !important;
             }
 
+            /* 쇼츠 카드 텍스트 박스 수직 중앙 정렬 & 비주얼 다듬기 */
             .shorts-grid .card-content {
-                padding: 12px 14px !important;
+                padding: 12px 16px !important;
                 display: flex !important;
                 flex-direction: column !important;
-                justify-content: space-between !important;
-                width: 100% !important;
+                justify-content: center !important; /* 상하 가운데 배치로 붕 떠 보이는 현상 해결 */
+                height: 100% !important;
                 box-sizing: border-box !important;
+            }
+
+            /* 모바일 쇼츠 전용 앙증맞은 배지 라벨 */
+            .shorts-grid .shorts-mini-badge {
+                display: inline-block !important;
+                font-size: 0.62rem !important;
+                font-weight: 800 !important;
+                color: var(--accent-color) !important;
+                letter-spacing: 0.5px !important;
+                margin-bottom: 4px !important;
+                text-transform: uppercase !important;
             }
 
             .shorts-grid .card-title {
                 font-size: 0.88rem !important;
-                line-height: 1.35 !important;
-                margin-bottom: 6px !important;
+                line-height: 1.3 !important;
+                margin-bottom: 8px !important;
+                display: -webkit-box !important;
+                -webkit-line-clamp: 2 !important; /* 최대 2줄 제한 */
+                -webkit-box-orient: vertical !important;
+                overflow: hidden !important;
             }
 
             .shorts-grid .tags {
-                margin-top: auto !important;
+                margin-top: 0 !important;
+                gap: 4px !important;
+            }
+
+            .shorts-grid .tag {
+                font-size: 0.65rem !important;
+                padding: 2px 6px !important;
             }
 
             .card-hover-overlay {
@@ -831,10 +858,11 @@
                     </div>
                 </div>
                 <div class="card-content">
+                    <span class="shorts-mini-badge">Shorts</span>
                     <h3 class="card-title">레오 얼굴에 상처가!?</h3>
                     <div class="tags">
                         <span class="tag">Shorts</span>
-                        <span class="tag">Informative Content</span>
+                        <span class="tag">Informative</span>
                     </div>
                 </div>
             </a>
@@ -847,10 +875,11 @@
                     </div>
                 </div>
                 <div class="card-content">
+                    <span class="shorts-mini-badge">Shorts</span>
                     <h3 class="card-title">고양이 얼굴에 하품 버튼이 있다?!</h3>
                     <div class="tags">
                         <span class="tag">Shorts</span>
-                        <span class="tag">Informative Content</span>
+                        <span class="tag">Informative</span>
                     </div>
                 </div>
             </a>
@@ -863,10 +892,11 @@
                     </div>
                 </div>
                 <div class="card-content">
+                    <span class="shorts-mini-badge">Shorts</span>
                     <h3 class="card-title">고양이 호흡이 너무 가빠르다면?</h3>
                     <div class="tags">
                         <span class="tag">Shorts</span>
-                        <span class="tag">Informative Content</span>
+                        <span class="tag">Informative</span>
                     </div>
                 </div>
             </a>
@@ -879,10 +909,11 @@
                     </div>
                 </div>
                 <div class="card-content">
+                    <span class="shorts-mini-badge">Shorts</span>
                     <h3 class="card-title">고양이 키우는거 반대하는 아버지</h3>
                     <div class="tags">
                         <span class="tag">Shorts</span>
-                        <span class="tag">Empathy Content</span>
+                        <span class="tag">Empathy</span>
                     </div>
                 </div>
             </a>
@@ -907,12 +938,12 @@
                     </div>
                 </div>
                 <div class="card-content">
+                    <span class="shorts-mini-badge">Shorts</span>
                     <h3 class="card-title">이브 날에 퇴근 못하고 크리스마스 트리 만들기</h3>
                     <div class="tags">
                         <span class="tag">Gemini</span>
                         <span class="tag">Kling</span>
                         <span class="tag">CapCut</span>
-                        <span class="tag">Photoshop</span>
                     </div>
                 </div>
             </a>
@@ -925,12 +956,12 @@
                     </div>
                 </div>
                 <div class="card-content">
+                    <span class="shorts-mini-badge">Shorts</span>
                     <h3 class="card-title">연휴 보내고 온 직장인들</h3>
                     <div class="tags">
                         <span class="tag">Gemini</span>
                         <span class="tag">Kling</span>
                         <span class="tag">CapCut</span>
-                        <span class="tag">Photoshop</span>
                     </div>
                 </div>
             </a>
@@ -943,12 +974,12 @@
                     </div>
                 </div>
                 <div class="card-content">
+                    <span class="shorts-mini-badge">Shorts</span>
                     <h3 class="card-title">회사에서 거슬리는 소리</h3>
                     <div class="tags">
                         <span class="tag">Gemini</span>
                         <span class="tag">Kling</span>
                         <span class="tag">CapCut</span>
-                        <span class="tag">Photoshop</span>
                     </div>
                 </div>
             </a>
@@ -961,12 +992,12 @@
                     </div>
                 </div>
                 <div class="card-content">
+                    <span class="shorts-mini-badge">Shorts</span>
                     <h3 class="card-title">사무실에서 누가 아직도 에어컨 키냐</h3>
                     <div class="tags">
                         <span class="tag">Gemini</span>
                         <span class="tag">Kling</span>
                         <span class="tag">CapCut</span>
-                        <span class="tag">Photoshop</span>
                     </div>
                 </div>
             </a>
