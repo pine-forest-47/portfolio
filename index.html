@@ -225,11 +225,6 @@
             gap: 24px;
         }
 
-        @media (max-width: 1024px) {
-            .work-grid { grid-template-columns: repeat(2, 1fr); }
-            .shorts-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
         /* Work Card & Overlay */
         .work-card {
             background: var(--card-bg);
@@ -349,7 +344,13 @@
             background: var(--accent-glow);
         }
 
-        /* 모바일 화면 세부 반응형 스타일 */
+        /* 태블릿 화면 반응형 */
+        @media (max-width: 1024px) {
+            .work-grid { grid-template-columns: repeat(2, 1fr); }
+            .shorts-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* 모바일 화면 종합 반응형 스타일 */
         @media (max-width: 640px) {
             header {
                 padding: 14px 5%;
@@ -384,37 +385,36 @@
                 grid-template-columns: 1fr;
             }
 
-            /* 모바일에서 쇼츠 영역 레이아웃 조정: 1열 배치 */
+            /* 쇼츠 전용 모바일 가로 레이아웃 */
             .shorts-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
+                grid-template-columns: 1fr !important;
+                gap: 14px !important;
             }
 
-            /* 쇼츠 카드: 모바일 전용 가로형(좌 측: 썸네일 / 우 측: 내용) 구조 */
             .shorts-grid .work-card {
-                flex-direction: row;
-                align-items: center;
-                height: auto;
+                flex-direction: row !important;
+                align-items: center !important;
+                height: auto !important;
             }
 
             .shorts-grid .media-container.shorts {
-                width: 105px;
-                aspect-ratio: 9 / 16;
-                flex-shrink: 0;
+                width: 100px !important;
+                aspect-ratio: 9 / 16 !important;
+                flex-shrink: 0 !important;
             }
 
             .shorts-grid .card-content {
-                padding: 14px 16px;
-                justify-content: center;
+                padding: 12px 14px !important;
+                justify-content: center !important;
             }
 
             .shorts-grid .card-title {
-                font-size: 0.92rem;
-                margin-bottom: 8px;
+                font-size: 0.9rem !important;
+                margin-bottom: 8px !important;
             }
 
             .shorts-grid .card-hover-overlay {
-                display: none; /* 모바일 터치 환경을 고려하여 쇼츠 호버 오버레이 비활성화 */
+                display: none !important;
             }
         }
 
