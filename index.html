@@ -354,7 +354,7 @@
             .shorts-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
-        /* 모바일 화면 종합 반응형 스타일 (방법 A 적용) */
+        /* 모바일 화면 반응형 스타일 */
         @media (max-width: 640px) {
             header {
                 padding: 14px 5%;
@@ -433,7 +433,7 @@
                 white-space: normal !important;
             }
 
-            /* [방법 A] 모바일 호버 오버레이를 카드 내부 텍스트 영역으로 항상 보이게 변경 */
+            /* 모바일 호버 오버레이 위치/스타일 완벽 재정의 */
             .card-hover-overlay {
                 position: static !important;
                 opacity: 1 !important;
@@ -444,6 +444,7 @@
                 padding: 0 0 8px 0 !important;
                 height: auto !important;
                 pointer-events: auto !important;
+                display: block !important;
             }
 
             .hover-desc {
@@ -451,7 +452,7 @@
                 color: #8e8e99 !important;
                 line-height: 1.4 !important;
                 display: -webkit-box !important;
-                -webkit-line-clamp: 2 !important; /* 2줄로 깔끔하게 정리 */
+                -webkit-line-clamp: 2 !important;
                 -webkit-box-orient: vertical !important;
                 overflow: hidden !important;
             }
