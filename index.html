@@ -328,11 +328,11 @@
                 pointer-events: auto !important;
             }
 
-            /* 토글 펼침 상태일 때: 콘텐츠 설명 버튼 바로 아래에 바짝 밀착 */
+            /* 토글 펼침 상태일 때: 콘텐츠 설명과 바짝 밀착시킴 */
             .work-card.desc-open .card-hover-overlay {
                 height: auto !important;
                 max-height: 300px !important;
-                margin: 2px 0 10px 0 !important; /* 키워드와 간격을 두고 버튼과 밀착 */
+                margin: 0 0 12px 0 !important;
             }
 
             .hover-desc {
@@ -346,16 +346,15 @@
                 display: block !important;
             }
 
-            /* 1. 콘텐츠 설명 버튼: 폰트 확대 & 터치 영역 확장 */
             .toggle-desc-btn {
                 display: inline-block !important;
-                font-size: 0.8rem !important; /* 폰트 크기 확대 */
+                font-size: 0.8rem !important;
                 color: var(--accent-color) !important;
                 background: transparent !important;
                 border: none !important;
-                padding: 4px 0 !important; /* 터치 영역 확대 */
+                padding: 2px 0 !important;
                 margin-top: 2px !important;
-                margin-bottom: 2px !important;
+                margin-bottom: 0px !important;
                 width: fit-content !important;
                 font-weight: 700 !important;
                 letter-spacing: -0.2px !important;
@@ -409,7 +408,7 @@
             transition: 0.2s;
         }
 
-        /* 3. 키워드(태그) 초록색 변경 효과 제거하여 구분 유지 */
+        /* 키워드(태그) 초록색 변경 효과 제거하여 구분 유지 */
         .work-card:hover .tag {
             color: var(--text-sub);
             border-color: var(--border-color);
@@ -458,6 +457,11 @@
                 gap: 20px !important;
             }
 
+            /* 가로형 영상 카드(work-grid)의 태그 박스 상단 마진 대폭 확대 */
+            .work-grid .tags {
+                margin-top: 14px !important;
+            }
+
             .shorts-grid {
                 grid-template-columns: 1fr !important;
                 gap: 14px !important;
@@ -499,8 +503,9 @@
                 white-space: normal !important;
             }
 
+            /* 세로형 쇼츠 카드의 태그 박스 위치 */
             .shorts-grid .tags {
-                margin-top: 6px !important;
+                margin-top: 10px !important;
                 gap: 4px !important;
             }
 
