@@ -274,7 +274,7 @@
             transform: scale(1.08);
         }
 
-        /* 모바일 전용 타이포그래피 토글 버튼 기본 숨김 (PC 미표시) */
+        /* 모바일 전용 토글 버튼 기본 숨김 (PC 미표시) */
         .toggle-desc-btn {
             display: none;
         }
@@ -310,7 +310,7 @@
             }
         }
 
-        /* 2. 모바일/터치 환경: 타이포그래피 구분 스타일 적용 */
+        /* 2. 모바일/터치 환경 스타일 */
         @media (hover: none), (max-width: 640px) {
             .card-hover-overlay {
                 position: static !important;
@@ -328,34 +328,34 @@
                 pointer-events: auto !important;
             }
 
-            /* 토글 펼침 상태일 때 (왼쪽 라인 및 박스 완전 삭제) */
+            /* 토글 펼침 상태일 때: 콘텐츠 설명 버튼 바로 아래에 바짝 밀착 */
             .work-card.desc-open .card-hover-overlay {
                 height: auto !important;
                 max-height: 300px !important;
-                margin: 6px 0 8px 0 !important;
+                margin: 2px 0 10px 0 !important; /* 키워드와 간격을 두고 버튼과 밀착 */
             }
 
             .hover-desc {
                 font-size: 0.78rem !important;
                 color: #a0a0b5 !important;
-                line-height: 1.5 !important;
+                line-height: 1.48 !important;
                 background: transparent !important;
                 padding: 0 !important;
                 border-radius: 0 !important;
-                border: none !important; /* 초록색 포인트 세로 라인 완벽 제거 */
+                border: none !important;
                 display: block !important;
             }
 
-            /* 타이포그래피 기반의 깔끔한 텍스트 토글 버튼 */
+            /* 1. 콘텐츠 설명 버튼: 폰트 확대 & 터치 영역 확장 */
             .toggle-desc-btn {
                 display: inline-block !important;
-                font-size: 0.73rem !important;
-                color: var(--accent-color) !important; /* 에메랄드 민트 그린 타이포 */
+                font-size: 0.8rem !important; /* 폰트 크기 확대 */
+                color: var(--accent-color) !important;
                 background: transparent !important;
                 border: none !important;
-                padding: 0 !important;
+                padding: 4px 0 !important; /* 터치 영역 확대 */
                 margin-top: 2px !important;
-                margin-bottom: 6px !important;
+                margin-bottom: 2px !important;
                 width: fit-content !important;
                 font-weight: 700 !important;
                 letter-spacing: -0.2px !important;
@@ -409,10 +409,11 @@
             transition: 0.2s;
         }
 
+        /* 3. 키워드(태그) 초록색 변경 효과 제거하여 구분 유지 */
         .work-card:hover .tag {
-            color: var(--accent-color);
-            border-color: rgba(0, 230, 153, 0.3);
-            background: var(--accent-glow);
+            color: var(--text-sub);
+            border-color: var(--border-color);
+            background: #1c1c22;
         }
 
         /* 태블릿 화면 반응형 */
@@ -499,7 +500,7 @@
             }
 
             .shorts-grid .tags {
-                margin-top: 4px !important;
+                margin-top: 6px !important;
                 gap: 4px !important;
             }
 
